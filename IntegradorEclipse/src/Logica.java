@@ -16,5 +16,5 @@ public class Logica implements Observer {
 		// TODO Auto-generated method stub
 
 	}
-
+	//shi
 }
