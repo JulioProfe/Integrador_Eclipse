@@ -7,8 +7,8 @@ public class Usuario implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String correo, contraseña, name;
-	private boolean registrado;
+	public String correo, contraseña, name;
+	public boolean registrado;
 	
 	public Usuario(String correo, String contraseña, String name, boolean registrado) {
 		// TODO Auto-generated constructor stub
