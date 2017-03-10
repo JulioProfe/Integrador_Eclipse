@@ -13,13 +13,14 @@ public class Comunicacion extends Observable implements Runnable {
 	
 	private DatagramSocket ds;
 	private final int Puerto = 5000;
-	private String ipCliente;
+	private String ipCliente = "226.8.8.6";
 	private InetAddress ia;
 
 	public Comunicacion() {
 		// TODO Auto-generated constructor stub
 		try {
 			ds = new DatagramSocket(Puerto);
+			ia = InetAddress.getByName(ipCliente);
 		} catch (SocketException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -66,7 +67,6 @@ public class Comunicacion extends Observable implements Runnable {
 	public void enviar(byte[] data){
 		DatagramPacket packet = new DatagramPacket(data, data.length, ia, Puerto);
 		try {
-			System.out.println("Enviando a: " + ia.getHostAddress());
 			ds.send(packet);
 			System.out.println("ENVIADO");
 		} catch (IOException e) {
