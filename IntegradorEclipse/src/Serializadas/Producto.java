@@ -9,9 +9,9 @@ public class Producto implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String nombre;
 	private int precio;
-	private Categoria cate;
+	private String cate;
 	
-	public Producto(Categoria cate, String nombre, int precio) {
+	public Producto(String cate, String nombre, int precio) {
 		// TODO Auto-generated constructor stub
 		this.nombre = nombre;
 		this.precio = precio;

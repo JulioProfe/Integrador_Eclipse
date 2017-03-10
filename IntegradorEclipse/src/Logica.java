@@ -37,32 +37,25 @@ public class Logica implements Observer {
 
 					if (registrados.name.equals(shi.name) & registrados.contraseña.equals(shi.contraseña)) {
 						String logueado = new String("LoginAprobado");
-
-						String productos[] = new String[3];
+						com.mensaje(logueado);
 						
-						productos[0] = "";
-						productos[1] = "";
-						productos[2] = "";
-						
-						float[] precios = new float[3];
-
-						precios[0] = 1000;
-						precios[1] = 2000;
-						precios[2] = 3000;
-
-						String prodDos[] = new String[3];
-						
-						prodDos[0] = "";
-						prodDos[1] = "";
-						prodDos[2] = "";
-						
-						float[] prodDosPrecio = new float[3];
-
-						prodDosPrecio[0] = 2000;
-						prodDosPrecio[1] = 3000;
-						prodDosPrecio[2] = 4000;
+						productos.add(new Producto("palomas", "paloma1", 1000));
+						productos.add(new Producto("palomas", "paloma2", 2000));
+						productos.add(new Producto("palomas", "paloma3", 3000));
+						productos.add(new Producto("prro", "prro1", 4000));
+						productos.add(new Producto("prro", "prro2", 5000));
+						productos.add(new Producto("prro", "prro3", 6000));
+						com.mensaje(productos);
+					} else if (!shi.registrado) {
+						System.out.println("Contraseña o usuario incorrecto");
+						String fallo = new String("LoginNoAprobado");
+						com.mensaje(fallo);
 					}
 				}
+			} else {
+				System.out.println("Usuario o registrado");
+				String noRegistro = new String ("LoginNoAprobado");
+				com.mensaje(noRegistro);
 			}
 		}
 	}
