@@ -35,7 +35,7 @@ public class Logica implements Observer {
 				for (int i = 0; i < usuarios.size(); i++) {
 					Usuario registrados = usuarios.get(i);
 
-					if (registrados.name.equals(shi.name) & registrados.contraseña.equals(shi.contraseña)) {
+					if (registrados.name.equals(shi.name) & registrados.contrasena.equals(shi.contrasena)) {
 						String logueado = new String("LoginAprobado");
 						com.mensaje(logueado);
 						
@@ -47,7 +47,7 @@ public class Logica implements Observer {
 						productos.add(new Producto("prro", "prro3", 6000));
 						com.mensaje(productos);
 					} else if (!shi.registrado) {
-						System.out.println("Contraseña o usuario incorrecto");
+						System.out.println("ContraseÃ±a o usuario incorrecto");
 						String fallo = new String("LoginNoAprobado");
 						com.mensaje(fallo);
 					}

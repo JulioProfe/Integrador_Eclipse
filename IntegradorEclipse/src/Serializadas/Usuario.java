@@ -7,12 +7,12 @@ public class Usuario implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public String correo, contraseña, name;
+	public String correo, contrasena, name;
 	public boolean registrado;
 	
-	public Usuario(String correo, String contraseña, String name, boolean registrado) {
+	public Usuario(String correo, String contrasena, String name, boolean registrado) {
 		// TODO Auto-generated constructor stub
-		this.contraseña = contraseña;
+		this.contrasena = contrasena;
 		this.correo = correo;
 		this.name = name;
 		this.registrado = registrado;
