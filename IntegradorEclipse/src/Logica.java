@@ -8,6 +8,7 @@ public class Logica implements Observer {
 	private Comunicacion com;
 	private ArrayList<Usuario> usuarios;
 	private ArrayList<Producto> productos;
+	private DataBase db;
 
 	public Logica() {
 		// TODO Auto-generated constructor stub
@@ -16,6 +17,8 @@ public class Logica implements Observer {
 		new Thread(com).start();
 		usuarios = new ArrayList<>();
 		productos = new ArrayList<>();
+		db = new DataBase("../data/usuarios.xml");
+		usuarios = db.getUsuarios();
 	}
 
 	@Override
@@ -26,8 +29,9 @@ public class Logica implements Observer {
 			Usuario shi = (Usuario) recibido;
 
 			if (shi.registrado) {
+				Usuario newUser = new Usuario(shi.contrasena, shi.name, true);
 				
-				usuarios.add(shi);
+				usuarios.add(newUser);
 				String hecho = new String("RegistroAproado");
 				com.mensaje(hecho);
 				
